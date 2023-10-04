@@ -11,7 +11,7 @@ struct ScrumsView: View {
     @Binding var scrums: [DailyScrum]
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewScrumView = false
-    let saveAction: ()->Void
+    let saveAction: () -> Void
 
     var body: some View {
         NavigationStack {

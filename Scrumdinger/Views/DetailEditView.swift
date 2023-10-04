@@ -41,10 +41,10 @@ struct DetailEditView: View {
                             scrum.attendees.append(attendee)
                             newAttendeeName = ""
                         }
-                    }, label: {
+                    }) {
                         Image(systemName: "plus.circle.fill")
                             .accessibilityLabel("Add attendee")
-                    })
+                    }
                     .disabled(newAttendeeName.isEmpty)
                 }
             }

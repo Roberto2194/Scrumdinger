@@ -10,7 +10,7 @@ import SwiftUI
 @MainActor
 class ScrumStore: ObservableObject {
     @Published var scrums: [DailyScrum] = []
-
+    
     private static func fileURL() throws -> URL {
         try FileManager.default.url(for: .documentDirectory,
                                     in: .userDomainMask,
@@ -18,7 +18,7 @@ class ScrumStore: ObservableObject {
                                     create: false)
         .appendingPathComponent("scrums.data")
     }
-
+    
     func load() async throws {
         let task = Task<[DailyScrum], Error> {
             let fileURL = try Self.fileURL()
